@@ -1,0 +1,28 @@
+/* Button.css */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+  }
+  
