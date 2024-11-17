@@ -1,45 +1,13 @@
-.contact-btn {
-    background-color: #ff9800; /* برتقالي */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  .contact-btn:hover {
-    background-color: #e68a00; /* لون أغمق عند التمرير */
-  }
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.container {
+    max-width: 600px;
+}
 
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-  }
-
-  root {
-    --primary-color: #2196F3;
-    --secondary-color: #FF9800;
-    --accent-color: #FFEB3B;
-    --text-color: #333;
-    --background-color: #fff;
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-  }
-  
-  .navbar {
-    background-color: var(--primary-color);
-  }
-  
-  .contact-btn {
-    background-color: var(--secondary-color);
-    color: var(--background-color);
-  }
-  
-  .highlight {
-    color: var(--accent-color);
-  }
