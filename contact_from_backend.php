@@ -20,5 +20,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Please fill all the fields!";
     }
-}?>
-
+}
+?>
