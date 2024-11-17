@@ -1,17 +1,23 @@
-{
-  "name": "marketing-agency",
-  "version": "1.0.0",
-  "main": "index.js",
+{  "name": "system-gestion-de-stockage",
+"version": "1.0.0",
+"description": "",
+"main": "main.js",
+
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  
+
+    "start": "electron .",
+     "pack": "electron-packager . 'System Gestion de Stockage' --platform=win32 --arch=x64 --out=dist --overwrite",
+    "build": "electron-builder"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "express": "^4.20.0",
-    "mongoose": "^8.6.1"
+  "devDependencies": {
+    "electron": "^25.9.8",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2"
+
   }
 }
+
