@@ -1,13 +1,24 @@
-body {
-    background-color: #f8f9fa;
-}
 
-h1 {
-    color: #343a40;
-}
-
-.container {
-    max-width: 600px;
-}
-
-
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            height: 500px;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .products img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+ 

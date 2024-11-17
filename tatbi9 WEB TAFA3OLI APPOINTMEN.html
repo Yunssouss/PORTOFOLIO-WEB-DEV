@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: antiquewhite;" >
+    <header>
+        <h1>Appointment </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Confirm Your Appointment</h2>
+        <form id="appointmentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required><br><br>
+            <button type="submit">Confirm</button>
+        </form>
+
+        <h3>Upcoming Appointments:</h3>
+        <ul id="appointmentsList"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const appointmentForm = document.getElementById('appointmentForm');
+        const appointmentsList = document.getElementById('appointmentsList');
+
+        appointmentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            const appointmentItem = document.createElement('li');
+            appointmentItem.textContent = `Appointment for ${name} on ${date} at ${time}`;
+
+            appointmentsList.appendChild(appointmentItem);
+
+            appointmentForm.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style=" font-family: Arial, Helvetica, sans-serif; background-color: antiquewhite;">
+    <header>
+        <h1>Welcome to Our Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+
+    
+    <h1>products</h1> 
+    <h2 style="padding: ; font-size: x-large;" > <button></button>  product : air max tn :</h2>
+       <img src="image_434cae63-26ab-464b-bb54-db196cbd22f6.webp" height="200"  width="300">
+    <h2 style="background-color: aliceblue;" >PRIX: 40$</h2>
+
+
+
+    <section id="products">
+        <h2>Products</h2>
+        <div id="product-list"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Store. All rights reserved.</p>
+    </footer>
+
+         
+    <script>src="app.js"
+        const products = [
+    { id: 1, name: 'Product 1', price: 100, image: 'product1.jpg' },
+    { id: 2, name: 'Product 2', price: 150, image: 'product2.jpg' },
+    { id: 3, name: 'Product 3', price: 200, image: 'product3.jpg' },
+    { id: 4, name: 'Product 4', price: 250, image: 'product4.jpg' },
+];
+
+const productList = document.getElementById('product-list');
+
+products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>$${product.price}</p>
+        <button onclick="addToCart(${product.id})">Add to Cart</button>
+    `;
+    productList.appendChild(productDiv);
+});
+
+function addToCart(productId) {
+    alert(`Product ${productId} added to cart!`);
+}
+
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const query = document.getElementById('search-input').value;
+
+    fetch(`search.php?query=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+
+            data.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>$${product.price}</p>
+                    <button onclick="addToCart(${product.id})">Add to Cart</button>
+                `;
+                productList.appendChild(productDiv);
+            });
+        });
+});
+
+
+    </script>
+   
+   
+
+
+
+
+</body>
+</html>

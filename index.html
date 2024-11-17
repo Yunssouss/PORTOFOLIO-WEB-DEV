@@ -3,176 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام إدارة المخزون</title>
-    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">إضافة منتج جديد</h1>
-        <form action="add_product.php" method="POST">
-            <!-- تصنيف المنتج -->
-            <div class="form-group mb-3">
-                <label for="product_category">تصنيف المنتج</label>
-                <select name="product_category" id="product_category" class="form-control">
-                    <option value="إلكترونيات">إلكترونيات</option>
-                    <option value="أجهزة منزلية">أجهزة منزلية</option>
-                    <option value="أثاث">أثاث</option>
-                    <option value="اكسسوارات">اكسسوارات</option>
-                    <option value="خضر وفواكه">خضر وفواكه</option>
+    <div style="background-color: #f2f2f2; padding: 20px;">
+        <img src="attachment_63187989.jpg" alt="Logo" style="width: 200px;">
+        <h1>مرحبا بكم في عروضنا الجديدة!</h1>
+        <p>اكتشفوا تخفيضات الصيف الخاصة بنا</p>
+        <a href="https://example.com" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none;">اشترِ الآن</a>
+      </div>
 
-                </select>
-            </div>
+      <header>
+        <h1>اكتشفوا عروضنا المميزة</h1>
+      </header>
+      <section>
+        <p>عروض حصرية لفترة محدودة. لا تفوت الفرصة!</p>
+        <img src="3_7209_DSC06949.jpg" alt="Product Image" style="width: 150px;">
+        <a href="https://example.com" class="cta-button">اطلب الآن</a>
+      </section>
 
-            <!-- اسم المنتج -->
-            <div class="form-group mb-3">
-                <label for="product_name">اسم المنتج</label>
-                <input type="text" class="form-control" id="product_name" name="product_name" required>
-            </div>
+      
 
-            <!-- ثمن المنتج -->
-            <div class="form-group mb-3">
-                <label for="product_price">ثمن المنتج</label>
-                <input type="number" class="form-control" id="product_price" name="product_price" required>
-            </div>
-
-            <!-- الكمية -->
-            <div class="form-group mb-3">
-                <label for="product_quantity">الكمية</label>
-                <input type="number" class="form-control" id="product_quantity" name="product_quantity" required>
-            </div>
-
-            <!-- زر الإضافة -->
-            <button type="submit" class="btn btn-primary btn-block">إضافة المنتج</button>
-        </form>
-        <hr>
-        <a href="inventory.php" class="btn btn-success btn-block">عرض المخزون</a>
-    </div>
-
-    <!-- تسجيل الحساب -->
-    <div class="container mt-5">
-        <h2 class="text-center">تسجيل الزبون</h2>
-        <form action="register_client.php" method="POST" class="row g-3">
-            <div class="col-md-6">
-                <label for="name" class="form-label">الاسم:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="col-md-6">
-                <label for="email" class="form-label">الإيميل:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="col-md-6">
-                <label for="phone" class="form-label">رقم الهاتف:</label>
-                <input type="text" class="form-control" id="phone" name="phone">
-            </div>
-            <div class="col-md-6">
-                <label for="address" class="form-label">العنوان:</label>
-                <input type="text" class="form-control" id="address" name="address">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">تسجيل</button>
-            </div>
-        </form> 
-    </div>
-
-    <!-- فاتورة الشراء -->
-    <div class="container mt-5">
-        <h2 class="text-center">فاتورة الزبون</h2>
-        <form id="invoice_form">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label>المنتج:</label>
-                    <select name="product[]" class="form-control" onchange="calculateTotal()">
-                        <option value="1460" data-name="تلفاز">تلفاز - 1460.00 درهم</option>
-                        <option value="2500" data-name="ثلاجة">ثلاجة - 2500.00 درهم</option>
-                        <option value="4250" data-name="حاسوب">حاسوب - 4250.00 درهم</option>
-                        <option value="5137" data-name="PS4">PS4 - 5173.00 درهم</option>
-                        <option value="2500" data-name="هاتف ذكي">هاتف ذكي - 2500.00 درهم</option>
-                        <option value="8500" data-name="حاسوب محمول">حاسوب محمول - 8500.00 درهم</option>
-                        <option value="4500" data-name="تلفاز ذكي">تلفاز ذكي - 4500.00 درهم</option>
-                        <option value="3000" data-name="مكيف هواء">مكيف هواء - 3000.00 درهم</option>
-                        <option value="900" data-name="ميكروويف">ميكروويف - 900.00 درهم</option>
-                        <option value="2000" data-name="ثلاجة صغيرة">ثلاجة صغيرة - 2000.00 درهم</option>
-                        <option value="4000" data-name="غسالة أوتوماتيكية">غسالة أوتوماتيكية - 4000.00 درهم</option>
-                        <option value="500" data-name="سماعات بلوتوث">سماعات بلوتوث - 500.00 درهم</option>
-                        <option value="1200" data-name="ساعة ذكية">ساعة ذكية - 1200.00 درهم</option>
-                        <option value="6000" data-name="كاميرا رقمية">كاميرا رقمية - 6000.00 درهم</option>
-                        <option value="3000" data-name="لوحة إلكترونية">لوحة إلكترونية - 3000.00 درهم</option>
-                        <option value="2500" data-name="كنبة">كنبة - 2500.00 درهم</option>
-                        <option value="700" data-name="كرسي مكتب">كرسي مكتب - 700.00 درهم</option>
-                        <option value="1200" data-name="مكتب كمبيوتر">مكتب كمبيوتر - 1200.00 درهم</option>
-                        <option value="1800" data-name="خزانة ملابس">خزانة ملابس - 1800.00 درهم</option>
-                        <option value="1500" data-name="طابعة ليزر">طابعة ليزر - 1500.00 درهم</option>
-                        <option value="250" data-name="مجفف شعر">مجفف شعر - 250.00 درهم</option>
-                        <option value="500" data-name="آلة حلاقة كهربائية">آلة حلاقة كهربائية - 500.00 درهم</option>
-                        <option value="4500" data-name="غسالة صحون">غسالة صحون - 4500.00 درهم</option>
-                        <option value="700" data-name="ماكينة صنع القهوة">ماكينة صنع القهوة - 700.00 درهم</option>
-                        <option value="300" data-name="خلاط كهربائي">خلاط كهربائي - 300.00 درهم</option>
-                        <option value="1200" data-name="مكنسة كهربائية">مكنسة كهربائية - 1200.00 درهم</option>
-                        <option value="800" data-name="دفاية كهربائية">دفاية كهربائية - 800.00 درهم</option>
-                        <option value="400" data-name="كومودينو">كومودينو - 400.00 درهم</option>
-                        <option value="2500" data-name="بروجيكتور">بروجيكتور - 2500.00 درهم</option>
-                        <option value="1500" data-name="كاميرا مراقبة">كاميرا مراقبة - 1500.00 درهم</option>
-                        <option value="200" data-name="مروحة">مروحة - 200.00 درهم</option>
-                        <option value="1800" data-name="باب منزلي">باب منزلي - 1800.00 درهم</option>
-                        <option value="1200" data-name="نافذة ألومنيوم">نافذة ألومنيوم - 1200.00 درهم</option>
-                        <option value="1500" data-name="دراجة هوائية">دراجة هوائية - 1500.00 درهم</option>
-                        <option value="350" data-name="سماعات رأس">سماعات رأس - 350.00 درهم</option>
-                        <option value="100" data-name="كابل شحن">كابل شحن - 100.00 درهم</option>
-                        <option value="300" data-name="محفظة ظهر">محفظة ظهر - 300.00 درهم</option>
-                        <option value="4500" data-name="جهاز ألعاب فيديو">جهاز ألعاب فيديو - 4500.00 درهم</option>
-                        <option value="2200" data-name="فرن كهربائي">فرن كهربائي - 2200.00 درهم</option>
-                        <option value="3000" data-name="شاشة كمبيوتر">شاشة كمبيوتر - 3000.00 درهم</option>
-                        <option value="400" data-name="كرسي أطفال">كرسي أطفال - 400.00 درهم</option>
-                        <option value="9000" data-name="آلة تصوير مستندات">آلة تصوير مستندات - 9000.00 درهم</option>
-                        <option value="250" data-name="ساعة حائط">ساعة حائط - 250.00 درهم</option>
-                        <option value="1500" data-name="فرن غاز">فرن غاز - 1500.00 درهم</option>
-                        <option value="300" data-name="ماكينة حلاقة شعر">ماكينة حلاقة شعر - 300.00 درهم</option>
-                        <option value="150" data-name="ماكينة إزالة الوبر">ماكينة إزالة الوبر - 150.00 درهم</option>
-                        <option value="2000" data-name="مكينة خياطة">مكينة خياطة - 2000.00 درهم</option>
-                        <option value="7000" data-name="جهاز رياضي">جهاز رياضي - 7000.00 درهم</option>
-                        <option value="8000" data-name="دراجة نارية">دراجة نارية - 8000.00 درهم</option>
-                        <option value="1200" data-name="ثريا">ثريا - 1200.00 درهم</option>
-                        <option value="2500" data-name="باب كراج">باب كراج - 2500.00 درهم</option>
-                        <option value="300" data-name="ستائر">ستائر - 300.00 درهم</option>
-                        <option value="400" data-name="مصفف شعر">مصفف شعر - 400.00 درهم</option>
-                        <option value="6000" data-name="آيباد">آيباد - 6000.00 درهم</option>
-                        
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label>الكمية:</label>
-                    <input type="number" name="quantity[]" value="1" min="1" class="form-control" onchange="calculateTotal()">
-                </div>
-            </div>
-
-            <!-- المجموع -->
-            <h3 id="total_amount" class="text-center">المجموع: 0.00 درهم</h3>
-        </form>
-    </div>
-
-    <!-- سكريبت الحساب -->
-    <script>
-    function calculateTotal() {
-        let form = document.getElementById('invoice_form');
-        let products = form.querySelectorAll('select[name="product[]"]');
-        let quantities = form.querySelectorAll('input[name="quantity[]"]');
-        
-        let total = 0;
-        
-        for (let i = 0; i < products.length; i++) {
-            let price = parseFloat(products[i].value);
-            let quantity = parseInt(quantities[i].value);
-            total += price * quantity;
-        }
-        
-        document.getElementById('total_amount').innerText = 'المجموع: ' + total.toFixed(2) + ' درهم';
-    }
-    </script>
-
-    <!-- روابط الجافاسكريبت و Bootstrap -->
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script2.js"></script>
-
+      
 </body>
 </html>
