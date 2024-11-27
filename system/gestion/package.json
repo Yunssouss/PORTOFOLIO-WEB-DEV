@@ -1,0 +1,23 @@
+{  "name": "system-gestion-de-stockage",
+"version": "1.0.0",
+"description": "",
+"main": "main.js",
+
+  
+  "scripts": {
+  
+
+    "start": "electron .",
+     "pack": "electron-packager . 'System Gestion de Stockage' --platform=win32 --arch=x64 --out=dist --overwrite",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^25.9.8",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2"
+
+  }
+}
+
