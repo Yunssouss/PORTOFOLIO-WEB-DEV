@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <h1 class="text-center">إضافة منتج جديد</h1>
         <form action="add_product.php" method="POST">
-            <!-- تصنيف المنتج -->
+     
             <div class="form-group mb-3">
                 <label for="product_category">تصنيف المنتج</label>
                 <select name="product_category" id="product_category" class="form-control">
@@ -24,32 +24,31 @@
                 </select>
             </div>
 
-            <!-- اسم المنتج -->
+        
             <div class="form-group mb-3">
                 <label for="product_name">اسم المنتج</label>
                 <input type="text" class="form-control" id="product_name" name="product_name" required>
             </div>
 
-            <!-- ثمن المنتج -->
+    
             <div class="form-group mb-3">
                 <label for="product_price">ثمن المنتج</label>
                 <input type="number" class="form-control" id="product_price" name="product_price" required>
             </div>
 
-            <!-- الكمية -->
+    
             <div class="form-group mb-3">
                 <label for="product_quantity">الكمية</label>
                 <input type="number" class="form-control" id="product_quantity" name="product_quantity" required>
             </div>
 
-            <!-- زر الإضافة -->
             <button type="submit" class="btn btn-primary btn-block">إضافة المنتج</button>
         </form>
         <hr>
         <a href="inventory.php" class="btn btn-success btn-block">عرض المخزون</a>
     </div>
 
-    <!-- تسجيل الحساب -->
+
     <div class="container mt-5">
         <h2 class="text-center">تسجيل الزبون</h2>
         <form action="register_client.php" method="POST" class="row g-3">
@@ -75,7 +74,7 @@
         </form> 
     </div>
 
-    <!-- فاتورة الشراء -->
+    
     <div class="container mt-5">
         <h2 class="text-center">فاتورة الزبون</h2>
         <form id="invoice_form">
@@ -146,12 +145,12 @@
                 </div>
             </div>
 
-            <!-- المجموع -->
+            
             <h3 id="total_amount" class="text-center">المجموع: 0.00 درهم</h3>
         </form>
     </div>
 
-    <!-- سكريبت الحساب -->
+  
     <script>
     function calculateTotal() {
         let form = document.getElementById('invoice_form');
@@ -170,7 +169,7 @@
     }
     </script>
 
-    <!-- روابط الجافاسكريبت و Bootstrap -->
+   
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="script2.js"></script>
 
