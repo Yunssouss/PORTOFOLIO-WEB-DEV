@@ -1,7 +1,7 @@
 <?php 
 include 'config.php';
 
-// استعلام واحد كافي لجلب جميع المنتجات
+
 $sql = "SELECT * FROM products";
 $stmt = $conn->query($sql);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -9,7 +9,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if (count($products) > 0) {
     // كاينين منتجات
     foreach ($products as $row) {
-        // هاد الكود غادي يعالج البيانات فيما بعد
+        
         // مثال: 
         // echo $row['product_name'];
     }
@@ -58,8 +58,7 @@ if (count($products) > 0) {
 </body>
 </html>
 
-<?php
-// PDO مكاينش حاجة بحال close() مع 
-// لذا ما خاصناش نسدو الاتصال يدوياً
+<?php  close() 
+
 ?>
 
